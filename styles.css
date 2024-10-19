@@ -1,0 +1,259 @@
+body {
+    background: url("../beach day.png");
+    background-size: 100vh 100vh;
+    size: portrait;
+    image-rendering: pixelated;
+    overflow: hidden;
+
+    /* user-drag: none; */
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+.spacer { height: 1px; width: 1px; }
+
+.background_image > img { min-height: 400px;}
+
+.container {
+    height: 100vh;
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.page {
+    height: 100%;
+
+    flex-direction: column;
+    scroll-snap-align: start; /* 스크롤 위치 맞춤 */
+}
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+.titlemenu , .page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titlemenu > div {
+    height: 100px;
+    text-align: center;
+    position: relative;
+}
+.billboard.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.cat > img { content: var(--cat); }
+.cat:hover > img{  content: var(--cat_hover); }
+
+.chicken > img { content: var(--chicken); }
+.chicken:hover > img{  content: var(--chicken_hover); }
+
+.double > img { content: var(--double); }
+.double:hover > img{  content: var(--double_hover); }
+
+
+.titlemenu > div > img {
+    height: 100px;
+}
+
+.titlemenu > div > div {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -35%);
+    color: rgb(107, 41, 41);
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.title > img {
+    height: 350px;
+}
+
+.title { margin-bottom: 200px; }
+
+.titlemenu > *:not(:last-child) {
+    margin-right: 50px;
+}
+
+.choice > img {
+    min-height: 400px;
+    width: auto;
+    content: var(--billBoard);
+}
+.background_image {
+    overflow: auto;
+    display: table;
+    position: relative;
+}
+.background_image > img + *  {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.background_image > img { display: table; }
+
+.buttons > div > img {
+    height: 50px;
+    position: absolute;
+    top:0%;
+    left: 0px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+    justify-content: space-between;
+}
+
+.buttons > .spacer { width: 100px; }
+.choice_menu > .spacer { height: 20px; }
+.choice .amount{
+    font-family: 'StardewValley', Arial, sans-serif;
+    font-size: 100px;
+}
+
+.choice .button {
+    position: relative;
+    height: 50px;
+    width: 50px;
+}
+
+.left.button img{
+    content: var(--arrow_left);
+}
+
+.right.button img{
+    content: var(--arrow_right);
+}
+
+.button img:hover {
+    filter: contrast(130%);
+}
+
+.description {
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+.okay.button {
+    padding: 20px;
+    align-self: self-end;
+}
+
+.okay.button img {
+    max-height: 45px;
+    max-width: auto;
+    content: var(--okay_button);
+}
+.okay.button img:hover {
+    content: var(--okay_button);
+    filter: contrast(130%);
+}
+
+.random.background_image > img, .result.background_image > img {
+    content: var(--special_order);
+}
+
+.special_order_board {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+}
+.special_order_board > * {
+    width: 50%;
+    height: 100%;
+    height: -moz-available;          /* WebKit-based browsers will ignore this. */
+    height: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    height: fill-available;
+}
+
+
+.boxs {
+    margin: 60px 40px 60px 50px;
+    display: flex;
+    align-items: center;
+    align-content: space-around;
+    flex-wrap: wrap;
+    align-content: baseline;
+}
+.box {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+}
+.random .box > img {
+    content: var(--aqua_box);
+}
+
+.box > img {
+    min-height: 50px;
+    width: auto;
+}
+
+.random_item, .receive_item {
+    margin: 60px 53px 60px 30px;
+    font-size: 30px;
+}
+.random_item > img {
+    margin-top: 20px;
+    height: 80px;
+}
+
+.receive_item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: end;
+    position: relative;
+}
+
+.command {
+    position: absolute;
+    font-size: 40px;
+    top: 30px;
+}
+
+.copy.button > img {
+    content: var(--program_button);
+    height: 45px;
+}
+
+.copy.button + .spacer {
+    height: 25px;
+}
+
+.cloud {
+    z-index: -1;
+    position: absolute;
+    height: auto;
+    overflow: hidden;
+}
+
+.cloud.big {  height: calc(100vh * (336 / 539)); }
+
+.cloud.small { height: calc(100vh * ((539 - 336) / 539)); }
+
+.cloud.small > img {
+    object-position: 0px calc(100vh * (336 / 539) * -1);
+}
+.cloud > img {
+    position: relative;
+    content: url(cloud_orange.png);
+
+    height: 100vh;
+    width: auto;
+}
