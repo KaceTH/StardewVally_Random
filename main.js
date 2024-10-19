@@ -253,7 +253,19 @@ document.querySelector(".page:nth-child(3) .okay.button img").addEventListener('
     element.classList.add("box");
     element.classList.add("receive");
     img.src = items[item_num].image;
+    img.name = items[item_num].name;
     element.appendChild(img);
     document.querySelector(".result .boxs").appendChild(element);
+
+    img.addEventListener('click', () =>{
+      document.querySelector
+    });
   }
+
+  let command_element = document.querySelector(".receive_item .command")
+  document.querySelectorAll(".box.receive img").forEach(self => {
+    self.addEventListener('click',() => {
+      command_element.textContent = self.name;
+    });
+  });
 });
