@@ -256,7 +256,9 @@ document.querySelector(".page:nth-child(3) .okay.button img").addEventListener('
     element.classList.add("box");
     element.classList.add("receive");
     img.src = items[item_num].image;
-    img.name = items[item_num].name;
+    img.id = items[item_num].name;
+    img.name = recieved_items[i].count;
+
     element.appendChild(img);
     document.querySelector(".result .boxs").appendChild(element);
 
@@ -268,7 +270,7 @@ document.querySelector(".page:nth-child(3) .okay.button img").addEventListener('
   
   document.querySelectorAll(".box.receive img").forEach(self => {
     self.addEventListener('click',() => {
-      command_element.textContent = 'Player_add name "'+ self.name + '"';
+      command_element.textContent = 'Player_add name "'+ self.id + '" '+ self.name;
     });
   });
 });
