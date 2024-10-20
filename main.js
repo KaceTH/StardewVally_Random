@@ -268,7 +268,7 @@ document.querySelector(".page:nth-child(3) .okay.button img").addEventListener('
   
   document.querySelectorAll(".box.receive img").forEach(self => {
     self.addEventListener('click',() => {
-      command_element.textContent = 'Player_add name "'+ self.name+ '"';
+      command_element.textContent = 'Player_add name "'+ self.name + '"';
     });
   });
 });
