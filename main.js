@@ -239,6 +239,9 @@ document.querySelector(".page:nth-child(2) .okay.button img").addEventListener('
   initBoxs()
 });
 
+
+let command_element = document.querySelector(".receive_item .command");
+
 document.querySelector(".page:nth-child(3) .okay.button img").addEventListener('click', () => {
   document.querySelectorAll(".box.receive").forEach(self=> {self.remove()});
   let count = recieved_items.length;
@@ -262,10 +265,14 @@ document.querySelector(".page:nth-child(3) .okay.button img").addEventListener('
     });
   }
 
-  let command_element = document.querySelector(".receive_item .command")
+  
   document.querySelectorAll(".box.receive img").forEach(self => {
     self.addEventListener('click',() => {
-      command_element.textContent = self.name;
+      command_element.textContent = 'Player_add name "self.name"';
     });
   });
+});
+
+document.querySelector(".copy.button").addEventListener('click', () => {
+  navigator.clipboard.writeText(document.querySelector(".receive_item .command").innerText)
 });
